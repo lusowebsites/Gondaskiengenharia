@@ -3,261 +3,705 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Gondaski Engenharia & Serviços - Engenheiro Eletricista em Criciúma e Região. Serviços elétricos, energia solar, automação residencial. Nota 4.7.">
+    <meta name="keywords" content="engenheiro eletricista, Criciúma, serviços elétricos, energia solar, automação residencial, Anderson Gondaski">
+    <meta name="author" content="Gondaski Engenharia & Serviços">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Gondaski Engenharia & Serviços | Engenheiro Eletricista | Criciúma">
     <meta property="og:description" content="Serviços elétricos profissionais com segurança e qualidade. Peça seu orçamento!">
-    <title>Gondaski Engenharia & Serviços | Criciúma | 4.7⭐</title>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w64" type="image/png">
+    
+    <title>Gondaski Engenharia & Serviços | Engenheiro Eletricista | Criciúma | 4.7⭐</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {theme: {extend: {colors: {blue: {900: '#0a1628', 800: '#0f1f3a', 700: '#15294d', 600: '#1a3050'}, gold: {400: '#d4a853', 500: '#c9983a'}}}}}
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            900: '#0a1628',
+                            800: '#0f1f3a',
+                            700: '#15294d',
+                            600: '#1a3050'
+                        },
+                        gold: {
+                            400: '#d4a853',
+                            500: '#c9983a'
+                        }
+                    }
+                }
+            }
+        }
     </script>
+    
+    <!-- Google Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;scroll-behavior:smooth;background-color:#0a1628;overflow-x:hidden}
-        html{scroll-behavior:smooth}
-        h1,h2,h3,.font-display{font-family:'Playfair Display',serif}
-        .logo-circle,.avatar-circle{border-radius:50%;object-fit:cover}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:.6}}
-        .blink{animation:blink 1.5s infinite}
-        @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.4)}50%{box-shadow:0 0 0 20px rgba(37,211,102,0)}}
-        .pulse-whatsapp{animation:pulse 2s infinite}
-        .gallery-img{width:100%;height:100%;object-fit:cover}
-        .hero-bg{background-image:url('https://drive.google.com/thumbnail?id=134sa5FjFgNn0xfZI6nFc40Mlto70t0kO&sz=w1920');background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
-        .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(10,22,40,.88) 0%,rgba(10,22,40,.93) 50%,rgba(10,22,40,.97) 100%);z-index:1}
-        .hero-content{position:relative;z-index:2}
-        .icon-svg{display:inline-block;width:1.2em;height:1.2em;vertical-align:middle}
-        .gallery-card{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:#15294d;box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer}
-        .gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-        .gallery-card:hover img{transform:scale(1.1)}
-        .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.85) 0%,transparent 60%);opacity:0;transition:opacity .3s ease;display:flex;align-items:flex-end;padding:16px}
-        .gallery-card:hover .gallery-overlay{opacity:1}
-        .gallery-label{color:#fff;font-size:.8rem;font-weight:600;letter-spacing:.5px}
-        .video-thumb{position:relative;cursor:pointer;overflow:hidden;border-radius:12px}
-        .video-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover}
-        .video-thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease}
-        .video-thumb:hover .play-btn{background:rgba(212,168,83,.9);transform:translate(-50%,-50%) scale(1.1)}
-        .video-thumb .play-btn svg{width:24px;height:24px;fill:#fff;margin-left:3px}
-        @media(max-width:640px){.hero-bg{background-position:top center}.gallery-label{font-size:.7rem}.video-thumb .play-btn{width:44px;height:44px}}
+        
+        /* ============ RESET & BASE ============ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0a1628;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        /* ============ TIPOGRAFIA ============ */
+        h1, h2, h3, .font-display { font-family: 'Playfair Display', Georgia, serif; }
+        
+        /* ============ UTILITÁRIOS ============ */
+        .logo-circle, .avatar-circle { border-radius: 50%; object-fit: cover; }
+        
+        .icon-svg { 
+            display: inline-block; 
+            width: 1.2em; 
+            height: 1.2em; 
+            vertical-align: middle; 
+        }
+        
+        /* ============ ANIMAÇÕES ============ */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .blink { animation: blink 1.5s ease-in-out infinite; }
+        
+        @keyframes pulse-whatsapp {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+        }
+        .pulse-whatsapp { animation: pulse-whatsapp 2s ease-in-out infinite; }
+        
+        /* ============ HERO COM BACKGROUND IMAGE ============ */
+        .hero-section {
+            background-image: url('https://drive.google.com/thumbnail?id=134sa5FjFgNn0xfZI6nFc40Mlto70t0kO&sz=w1920');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 22, 40, 0.88) 0%,
+                rgba(10, 22, 40, 0.93) 50%,
+                rgba(10, 22, 40, 0.97) 100%
+            );
+            z-index: 1;
+        }
+        
+        .hero-content { position: relative; z-index: 2; }
+        
+        /* ============ GALERIA DE FOTOS ============ */
+        .gallery-card {
+            position: relative;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #15294d;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            isolation: isolate;
+        }
+        
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gallery-card:hover img { transform: scale(1.1); }
+        
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 22, 40, 0.85) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+            z-index: 1;
+        }
+        
+        .gallery-card:hover .gallery-overlay { opacity: 1; }
+        
+        .gallery-label {
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ============ VÍDEOS COM THUMBNAIL ============ */
+        .video-thumb {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #15294d;
+        }
+        
+        .video-thumb img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .video-thumb:hover .video-play-btn {
+            background: rgba(212, 168, 83, 0.9);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-play-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+            margin-left: 3px;
+        }
+        
+        /* ============ RESPONSIVO ============ */
+        @media (max-width: 640px) {
+            .hero-section { background-position: top center; }
+            .gallery-label { font-size: 0.7rem; }
+            .video-play-btn { width: 44px; height: 44px; }
+        }
     </style>
 </head>
-<body class="font-sans bg-blue-900">
+<body>
 
-    <!-- TOP BAR -->
-    <div class="bg-gold-500 text-blue-900 text-center py-2 px-2 text-xs sm:text-sm font-semibold">
-        ⚡ Atendimento de emergência? <a href="tel:+5548999016623" class="underline font-bold">Ligue: (48) 99901-6623</a>
-    </div>
+    <!-- ==================== TOP BAR ==================== -->
+    <aside class="bg-gold-500 text-blue-900 text-center py-2 px-2 text-xs sm:text-sm font-semibold" role="banner">
+        <span>⚡ Atendimento de emergência?</span>
+        <a href="tel:+5548999016623" class="underline font-bold" aria-label="Ligar para (48) 99901-6623">
+            Ligue: (48) 99901-6623
+        </a>
+    </aside>
 
-    <!-- HEADER -->
-    <header class="bg-blue-900 sticky top-0 z-50 shadow-lg border-b border-blue-700">
+    <!-- ==================== HEADER PRINCIPAL ==================== -->
+    <header class="bg-blue-900 sticky top-0 z-50 shadow-lg border-b border-blue-700" role="navigation">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2 sm:py-3">
-            <a href="#" class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w120" alt="Logo" class="h-10 w-10 sm:h-14 sm:w-14 logo-circle" onerror="this.style.display='none'">
-                <span class="text-white font-bold text-xs sm:text-sm md:text-base leading-tight tracking-wide" style="font-family:'Playfair Display',serif">Gondaski<span class="text-white font-light"> Engenharia & Serviços</span></span>
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 sm:gap-3 flex-shrink-0" aria-label="Ir para o início">
+                <img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w120" 
+                     alt="Logo Gondaski Engenharia & Serviços" 
+                     class="h-10 w-10 sm:h-14 sm:w-14 logo-circle" 
+                     width="56" 
+                     height="56"
+                     loading="eager"
+                     onerror="this.style.display='none'">
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base leading-tight tracking-wide font-display">
+                    Gondaski<span class="font-light"> Engenharia & Serviços</span>
+                </span>
             </a>
+            
+            <!-- Navegação Desktop -->
             <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-xs xl:text-sm uppercase tracking-widest">
-                <a href="#servicos" class="text-white hover:text-gold-400 transition font-medium">Serviços</a>
-                <a href="#galeria" class="text-white hover:text-gold-400 transition font-medium">Galeria</a>
-                <a href="#videos" class="text-white hover:text-gold-400 transition font-medium">Vídeos</a>
-                <a href="#quemsou" class="text-white hover:text-gold-400 transition font-medium">Quem Sou</a>
-                <a href="#depoimentos" class="text-white hover:text-gold-400 transition font-medium">Depoimentos</a>
-                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="bg-gold-500 hover:bg-gold-400 text-blue-900 px-4 py-2 rounded-full font-bold text-xs transition inline-flex items-center gap-1.5 whitespace-nowrap">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Orçamento
+                <a href="#servicos" class="text-white hover:text-gold-400 transition-colors duration-300 font-medium">Serviços</a>
+                <a href="#galeria" class="text-white hover:text-gold-400 transition-colors duration-300 font-medium">Galeria</a>
+                <a href="#videos" class="text-white hover:text-gold-400 transition-colors duration-300 font-medium">Vídeos</a>
+                <a href="#quemsou" class="text-white hover:text-gold-400 transition-colors duration-300 font-medium">Quem Sou</a>
+                <a href="#depoimentos" class="text-white hover:text-gold-400 transition-colors duration-300 font-medium">Depoimentos</a>
+                
+                <!-- Botão Orçamento Header -->
+                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="bg-gold-500 hover:bg-gold-400 text-blue-900 px-4 py-2 rounded-full font-bold text-xs transition-all duration-300 hover:scale-105 inline-flex items-center gap-1.5 whitespace-nowrap shadow-md hover:shadow-lg">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    Orçamento
                 </a>
             </nav>
-            <button id="menuToggle" class="lg:hidden text-white text-xl sm:text-2xl p-2" aria-label="Menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            
+            <!-- Botão Menu Mobile -->
+            <button id="menuToggle" 
+                    class="lg:hidden text-white text-xl sm:text-2xl p-2 hover:text-gold-400 transition-colors" 
+                    aria-label="Abrir menu de navegação"
+                    aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
             </button>
         </div>
-        <div id="mobileMenu" class="hidden lg:hidden bg-blue-800 px-6 pb-4 flex flex-col gap-2 text-sm uppercase tracking-widest">
-            <a href="#servicos" class="text-white hover:text-gold-400 py-2 font-medium">Serviços</a>
-            <a href="#galeria" class="text-white hover:text-gold-400 py-2 font-medium">Galeria</a>
-            <a href="#videos" class="text-white hover:text-gold-400 py-2 font-medium">Vídeos</a>
-            <a href="#quemsou" class="text-white hover:text-gold-400 py-2 font-medium">Quem Sou</a>
-            <a href="#depoimentos" class="text-white hover:text-gold-400 py-2 font-medium">Depoimentos</a>
-            <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="bg-gold-500 text-blue-900 px-5 py-3 rounded-full font-bold text-center mt-2 inline-flex items-center justify-center gap-2">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Orçamento
+        
+        <!-- Navegação Mobile -->
+        <nav id="mobileMenu" class="hidden lg:hidden bg-blue-800 px-6 pb-4 flex flex-col gap-2 text-sm uppercase tracking-widest" role="menu">
+            <a href="#servicos" class="text-white hover:text-gold-400 py-2 font-medium transition-colors" role="menuitem">Serviços</a>
+            <a href="#galeria" class="text-white hover:text-gold-400 py-2 font-medium transition-colors" role="menuitem">Galeria</a>
+            <a href="#videos" class="text-white hover:text-gold-400 py-2 font-medium transition-colors" role="menuitem">Vídeos</a>
+            <a href="#quemsou" class="text-white hover:text-gold-400 py-2 font-medium transition-colors" role="menuitem">Quem Sou</a>
+            <a href="#depoimentos" class="text-white hover:text-gold-400 py-2 font-medium transition-colors" role="menuitem">Depoimentos</a>
+            <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="bg-gold-500 text-blue-900 px-5 py-3 rounded-full font-bold text-center mt-2 inline-flex items-center justify-center gap-2 shadow-md" 
+               role="menuitem">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                Orçamento
             </a>
-        </div>
+        </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero-bg text-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 text-center relative overflow-hidden">
-        <div class="hero-overlay"></div>
-        <div class="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div class="max-w-4xl mx-auto hero-content">
-            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-2 tracking-tight">Serviços Elétricos<br><span class="text-gold-400">Profissionais e Confiáveis</span></h1>
-            <p class="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 font-light tracking-wide">Criciúma e Região</p>
-            <div class="flex justify-center gap-3 flex-wrap px-2">
-                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="bg-gold-500 hover:bg-gold-400 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Solicitar Orçamento
-                </a>
-                <a href="tel:+5548999016623" class="border-2 border-white/30 hover:border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Ligar Agora
-                </a>
+    <main>
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero-section text-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 text-center relative overflow-hidden" aria-labelledby="hero-title">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+            
+            <div class="max-w-4xl mx-auto hero-content">
+                <h1 id="hero-title" class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-2 tracking-tight">
+                    Serviços Elétricos<br>
+                    <span class="text-gold-400">Profissionais e Confiáveis</span>
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 font-light tracking-wide">
+                    Criciúma e Região
+                </p>
+                
+                <div class="flex justify-center gap-3 flex-wrap px-2">
+                    <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="bg-gold-500 hover:bg-gold-400 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                        Solicitar Orçamento
+                    </a>
+                    <a href="tel:+5548999016623" 
+                       class="border-2 border-white/30 hover:border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide transition-all duration-300 hover:bg-white/10">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Ligar Agora
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-8 sm:mb-10">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-400 mt-2 tracking-tight">Nossos Serviços</h2>
-                <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3"></div>
+        <!-- ==================== SEÇÃO DE SERVIÇOS ==================== -->
+        <section id="servicos" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-800" aria-labelledby="servicos-title">
+            <div class="max-w-6xl mx-auto">
+                <header class="text-center mb-8 sm:mb-10">
+                    <h2 id="servicos-title" class="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-400 mt-2 tracking-tight">Nossos Serviços</h2>
+                    <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3" aria-hidden="true"></div>
+                </header>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                    <!-- Serviço 1: Residenciais -->
+                    <article class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition-all duration-300 text-center group">
+                        <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Instala%C3%A7%C3%B5es%20Residenciais." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="block">
+                            <div class="text-gold-400 mb-3" aria-hidden="true">
+                                <svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Instalações Residenciais</h3>
+                            <p class="text-gray-300 text-xs mt-1">Projetos, tomadas e iluminação</p>
+                        </a>
+                    </article>
+                    
+                    <!-- Serviço 2: Comerciais -->
+                    <article class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition-all duration-300 text-center group">
+                        <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Instala%C3%A7%C3%B5es%20Comerciais." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="block">
+                            <div class="text-gold-400 mb-3" aria-hidden="true">
+                                <svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                                    <line x1="9" y1="6" x2="15" y2="6"/>
+                                    <line x1="9" y1="10" x2="15" y2="10"/>
+                                    <line x1="9" y1="14" x2="12" y2="14"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Instalações Comerciais</h3>
+                            <p class="text-gray-300 text-xs mt-1">Elétrica para lojas, escritórios e galpões</p>
+                        </a>
+                    </article>
+                    
+                    <!-- Serviço 3: Solar (Porcentagem alterada para 85%) -->
+                    <article class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition-all duration-300 text-center group">
+                        <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Energia%20Solar." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="block">
+                            <div class="text-gold-400 mb-3" aria-hidden="true">
+                                <svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <line x1="12" y1="1" x2="12" y2="3"/>
+                                    <line x1="12" y1="21" x2="12" y2="23"/>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                    <line x1="1" y1="12" x2="3" y2="12"/>
+                                    <line x1="21" y1="12" x2="23" y2="12"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Energia Solar</h3>
+                            <p class="text-gray-300 text-xs mt-1">Economize até 85% na sua conta de luz</p>
+                        </a>
+                    </article>
+                    
+                    <!-- Serviço 4: Automação -->
+                    <article class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition-all duration-300 text-center group">
+                        <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Automa%C3%A7%C3%A3o%20Residencial." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="block">
+                            <div class="text-gold-400 mb-3" aria-hidden="true">
+                                <svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                    <path d="M12 9v2"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Automação Residencial</h3>
+                            <p class="text-gray-300 text-xs mt-1">Controle sua casa pelo smartphone e assistentes de voz</p>
+                        </a>
+                    </article>
+                </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Instala%C3%A7%C3%B5es%20Residenciais." target="_blank" class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition text-center group">
-                    <div class="text-gold-400 mb-3"><svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                    <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Instalações Residenciais</h3>
-                    <p class="text-gray-300 text-xs mt-1">Projetos elétricos, tomadas e iluminação</p>
-                </a>
-                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Instala%C3%A7%C3%B5es%20Comerciais." target="_blank" class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition text-center group">
-                    <div class="text-gold-400 mb-3"><svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="6" x2="15" y2="6"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="12" y2="14"/></svg></div>
-                    <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Instalações Comerciais</h3>
-                    <p class="text-gray-300 text-xs mt-1">Elétrica para lojas, escritórios e galpões</p>
-                </a>
-                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Energia%20Solar." target="_blank" class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition text-center group">
-                    <div class="text-gold-400 mb-3"><svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
-                    <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Energia Solar</h3>
-                    <p class="text-gray-300 text-xs mt-1">Economize até 95% na sua conta de luz</p>
-                </a>
-                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Tenho%20interesse%20em%20Automa%C3%A7%C3%A3o%20Residencial." target="_blank" class="bg-blue-700 border border-blue-600 p-4 sm:p-5 rounded-xl hover:border-gold-400 hover:shadow-lg transition text-center group">
-                    <div class="text-gold-400 mb-3"><svg class="w-9 h-9 sm:w-11 sm:h-11 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M12 9v2"/></svg></div>
-                    <h3 class="font-bold text-white text-sm sm:text-base tracking-wide">Automação Residencial</h3>
-                    <p class="text-gray-300 text-xs mt-1">Controle sua casa pelo smartphone e assistentes de voz</p>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- GALERIA (8 FOTOS - REMOVIDAS FOTO 4 E FOTO 9) -->
-    <section id="galeria" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-900">
-        <div class="max-w-6xl mx-auto text-center mb-8 sm:mb-10">
-            <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest">Projetos</span>
-            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2 tracking-tight">Galeria de Trabalhos</h2>
-            <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3"></div>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 max-w-6xl mx-auto">
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1hqvBfcpEV5gal3TNN_4JLGgsGt5L6_hQ&sz=w600" alt="Fotovoltaico" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Sistema Fotovoltaico</span></div></div>
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1p2FhVBURGidWWGSG5IASFhzA_azPmqyT&sz=w600" alt="Lustre" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Instalação de Lustre</span></div></div>
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1aYXfds0ubZ-wt4vY193FwXER1QrGikro&sz=w600" alt="Lustre" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Instalação de Lustre</span></div></div>
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1AN0Gm9ax6M7WJnnDMfGkBs7wFgRv81rr&sz=w600" alt="Obra" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Infraestrutura de Obra</span></div></div>
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1yNe6v13W72pu3zUgB7dWMJW8JLJzl2Uc&sz=w600" alt="Obra" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Infraestrutura de Obra</span></div></div>
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1jjXCP6GZ6_t5A99xRkB_qzv5zGmrvlDk&sz=w600" alt="Carregador" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Carregador Elétrico</span></div></div>
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1NZBkJK6NttUHIRc4NatDeP5oIaCBeFQW&sz=w600" alt="Solar" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Painéis Solares</span></div></div>
-            <div class="gallery-card"><img src="https://drive.google.com/thumbnail?id=1myA3w6Sr_EekOVUmjHsgzaViU8KonU-N&sz=w600" alt="Iluminação" loading="lazy"><div class="gallery-overlay"><span class="gallery-label">Lustres e Iluminação</span></div></div>
-        </div>
-    </section>
+        <!-- ==================== GALERIA DE TRABALHOS (Foto 3 substituída) ==================== -->
+        <section id="galeria" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-900" aria-labelledby="galeria-title">
+            <div class="max-w-6xl mx-auto">
+                <header class="text-center mb-8 sm:mb-10">
+                    <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest">Projetos</span>
+                    <h2 id="galeria-title" class="text-2xl sm:text-3xl font-bold text-white mt-2 tracking-tight">Galeria de Trabalhos</h2>
+                    <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3" aria-hidden="true"></div>
+                </header>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1hqvBfcpEV5gal3TNN_4JLGgsGt5L6_hQ&sz=w600" alt="Sistema Fotovoltaico instalado" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Sistema Fotovoltaico</span></figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1p2FhVBURGidWWGSG5IASFhzA_azPmqyT&sz=w600" alt="Instalação de Lustre" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Instalação de Lustre</span></figcaption>
+                    </figure>
+                    <!-- FOTO 3 SUBSTITUÍDA -->
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1AondcdynNgommdw-r-vOGSN7NkidYnXW&sz=w600" alt="Instalação de Lustre decorativo" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Instalação de Lustre</span></figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1AN0Gm9ax6M7WJnnDMfGkBs7wFgRv81rr&sz=w600" alt="Infraestrutura de obra elétrica" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Infraestrutura de Obra</span></figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1yNe6v13W72pu3zUgB7dWMJW8JLJzl2Uc&sz=w600" alt="Infraestrutura de obra elétrica" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Infraestrutura de Obra</span></figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1jjXCP6GZ6_t5A99xRkB_qzv5zGmrvlDk&sz=w600" alt="Carregador para veículos elétricos" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Carregador Elétrico</span></figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1NZBkJK6NttUHIRc4NatDeP5oIaCBeFQW&sz=w600" alt="Painéis Solares instalados" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Painéis Solares</span></figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="https://drive.google.com/thumbnail?id=1myA3w6Sr_EekOVUmjHsgzaViU8KonU-N&sz=w600" alt="Lustres e iluminação embutida" loading="lazy">
+                        <figcaption class="gallery-overlay"><span class="gallery-label">Lustres e Iluminação</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
 
-    <!-- VÍDEOS COM CAPA, 1 CLIQUE E TÍTULOS EM DOURADO -->
-    <section id="videos" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-800">
-        <div class="max-w-6xl mx-auto text-center mb-8 sm:mb-10">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gold-400 mt-2 tracking-tight">Serviços Executados</h2>
-            <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3"></div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div class="video-thumb" onclick="this.querySelector('iframe').style.display='block';this.querySelector('.video-poster').style.display='none';this.querySelector('.play-btn').style.display='none'">
-                <div class="video-poster"><img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w600" alt="Capa Vídeo" class="w-full aspect-video object-cover"></div>
-                <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-                <iframe src="https://drive.google.com/file/d/1t3mlxAyQa3Gh4NoEwwsj9ybA_dWzI6W5/preview" class="w-full aspect-video border-0" style="display:none" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-                <p class="p-3 text-gold-400 text-sm sm:text-base font-bold text-center tracking-wide">Vídeo Carregador de Carro Elétrico</p>
+        <!-- ==================== VÍDEOS ==================== -->
+        <section id="videos" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-800" aria-labelledby="videos-title">
+            <div class="max-w-6xl mx-auto">
+                <header class="text-center mb-8 sm:mb-10">
+                    <h2 id="videos-title" class="text-2xl sm:text-3xl font-bold text-gold-400 mt-2 tracking-tight">Serviços Executados</h2>
+                    <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3" aria-hidden="true"></div>
+                </header>
+                
+                <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <!-- Vídeo 1 -->
+                    <article class="bg-blue-700 rounded-xl overflow-hidden shadow-md border border-blue-600">
+                        <div class="video-thumb" onclick="handleVideoClick(this)">
+                            <div class="video-poster">
+                                <img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w600" alt="Capa do vídeo - Carregador de Carro Elétrico" loading="lazy">
+                            </div>
+                            <div class="video-play-btn" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                            </div>
+                            <iframe src="https://drive.google.com/file/d/1t3mlxAyQa3Gh4NoEwwsj9ybA_dWzI6W5/preview" 
+                                    class="w-full aspect-video border-0" 
+                                    style="display:none" 
+                                    allow="autoplay" 
+                                    allowfullscreen 
+                                    loading="lazy"
+                                    title="Vídeo Carregador de Carro Elétrico"></iframe>
+                        </div>
+                        <h3 class="p-3 text-gold-400 text-sm sm:text-base font-bold text-center tracking-wide">Vídeo Carregador de Carro Elétrico</h3>
+                    </article>
+                    
+                    <!-- Vídeo 2 -->
+                    <article class="bg-blue-700 rounded-xl overflow-hidden shadow-md border border-blue-600">
+                        <div class="video-thumb" onclick="handleVideoClick(this)">
+                            <div class="video-poster">
+                                <img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w600" alt="Capa do vídeo - Iluminação para Estúdio" loading="lazy">
+                            </div>
+                            <div class="video-play-btn" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                            </div>
+                            <iframe src="https://drive.google.com/file/d/1F53DXOXNiaov1iaoyyWEhip7gxeR3kPv/preview" 
+                                    class="w-full aspect-video border-0" 
+                                    style="display:none" 
+                                    allow="autoplay" 
+                                    allowfullscreen 
+                                    loading="lazy"
+                                    title="Vídeo Iluminação para Estúdio"></iframe>
+                        </div>
+                        <h3 class="p-3 text-gold-400 text-sm sm:text-base font-bold text-center tracking-wide">Vídeo Iluminação para Estúdio</h3>
+                    </article>
+                </div>
             </div>
-            <div class="video-thumb" onclick="this.querySelector('iframe').style.display='block';this.querySelector('.video-poster').style.display='none';this.querySelector('.play-btn').style.display='none'">
-                <div class="video-poster"><img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w600" alt="Capa Vídeo" class="w-full aspect-video object-cover"></div>
-                <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-                <iframe src="https://drive.google.com/file/d/1F53DXOXNiaov1iaoyyWEhip7gxeR3kPv/preview" class="w-full aspect-video border-0" style="display:none" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-                <p class="p-3 text-gold-400 text-sm sm:text-base font-bold text-center tracking-wide">Vídeo Iluminação para Estúdio</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- QUEM SOU EU -->
-    <section id="quemsou" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-900">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-            <div class="text-center"><img src="https://drive.google.com/thumbnail?id=1vYqPihv4RsZESKVAtmo7LUsL4i2ALC94&sz=w600" alt="Anderson Gondaski" class="rounded-full w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 object-cover border-4 border-gold-400 mx-auto shadow-lg" loading="lazy"></div>
-            <div>
-                <h2 class="text-2xl sm:text-3xl font-bold text-gold-400 mt-2 tracking-tight">Quem Sou Eu</h2>
-                <div class="w-16 h-0.5 bg-gold-400 mt-2 mb-4"></div>
-                <h3 class="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">Anderson Gondaski</h3>
-                <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest block mb-3 sm:mb-4">Engenheiro Eletricista</span>
-                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">Profissional natural do Paraná, Engenheiro Eletricista com mais de 15 anos de experiência. Atua diretamente no desenvolvimento e execução de soluções elétricas com qualidade, segurança e conformidade com normas técnicas.</p>
-                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mt-2">Nossa atuação abrange projetos elétricos, sistemas de alarme e segurança eletrônica, automação residencial e predial, além de sistemas fotovoltaicos, com foco em eficiência energética e sustentabilidade.</p>
+        <!-- ==================== QUEM SOU EU (Texto alterado) ==================== -->
+        <section id="quemsou" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-900" aria-labelledby="quemsou-title">
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <figure class="text-center">
+                    <img src="https://drive.google.com/thumbnail?id=1vYqPihv4RsZESKVAtmo7LUsL4i2ALC94&sz=w600" 
+                         alt="Anderson Gondaski - Engenheiro Eletricista" 
+                         class="rounded-full w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 object-cover border-4 border-gold-400 mx-auto shadow-lg" 
+                         loading="lazy">
+                </figure>
+                <div>
+                    <h2 id="quemsou-title" class="text-2xl sm:text-3xl font-bold text-gold-400 mt-2 tracking-tight">Quem Sou Eu</h2>
+                    <div class="w-16 h-0.5 bg-gold-400 mt-2 mb-4" aria-hidden="true"></div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">Anderson Gondaski</h3>
+                    <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest block mb-3 sm:mb-4">Engenheiro Eletricista</span>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">Profissional natural do Paraná, Engenheiro Eletricista com mais de 15 anos de experiência. Atua diretamente no desenvolvimento e execução de soluções elétricas com qualidade, segurança e conformidade com normas técnicas.</p>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mt-2">Nossa atuação abrange projetos elétricos, sistemas de segurança, automação residencial e predial, além de sistemas fotovoltaicos, com foco em eficiência energética e sustentabilidade.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- STATS -->
-    <section class="py-10 sm:py-12 bg-blue-800 text-center">
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto px-4 sm:px-6">
-            <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">500+</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Projetos</p></div>
-            <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">4.7★</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Google</p></div>
-            <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">+15</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Anos</p></div>
-            <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">100%</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Satisfação</p></div>
-        </div>
-    </section>
+        <!-- ==================== STATS ==================== -->
+        <section class="py-10 sm:py-12 bg-blue-800 text-center" aria-label="Estatísticas">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto px-4 sm:px-6">
+                <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">500+</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Projetos</p></div>
+                <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">4.7★</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Google</p></div>
+                <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">+15</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Anos</p></div>
+                <div><div class="text-2xl sm:text-3xl font-bold text-gold-400 tracking-tight">100%</div><p class="text-gray-300 text-xs tracking-widest uppercase mt-1">Satisfação</p></div>
+            </div>
+        </section>
 
-    <!-- DEPOIMENTOS (4 AVALIAÇÕES) -->
-    <section id="depoimentos" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-900">
-        <div class="max-w-5xl mx-auto text-center mb-8 sm:mb-10">
-            <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest">Depoimentos</span>
-            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2 tracking-tight">Quem conhece, confia</h2>
-            <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3"></div>
-        </div>
-        <div class="grid sm:grid-cols-2 gap-4 max-w-5xl mx-auto">
-            <div class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition">
-                <div class="flex items-center gap-3 mb-3"><img src="https://drive.google.com/thumbnail?id=1RHKeedWeXMGQb0YxUdg3svBpJo9oK7db&sz=w80" alt="Embraconi" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy"><div><p class="font-bold text-white text-xs sm:text-sm tracking-wide">Construtora Embraconi</p><span class="text-gold-400 text-xs">★★★★★</span></div></div>
-                <p class="text-gray-300 italic text-xs sm:text-sm">"Profissionais de excelência."</p>
+        <!-- ==================== DEPOIMENTOS ==================== -->
+        <section id="depoimentos" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-900" aria-labelledby="depoimentos-title">
+            <div class="max-w-5xl mx-auto">
+                <header class="text-center mb-8 sm:mb-10">
+                    <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest">Depoimentos</span>
+                    <h2 id="depoimentos-title" class="text-2xl sm:text-3xl font-bold text-white mt-2 tracking-tight">Quem conhece, confia</h2>
+                    <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-3" aria-hidden="true"></div>
+                </header>
+                
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <blockquote class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://drive.google.com/thumbnail?id=1RHKeedWeXMGQb0YxUdg3svBpJo9oK7db&sz=w80" alt="Construtora Embraconi" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy">
+                            <div>
+                                <cite class="font-bold text-white text-xs sm:text-sm tracking-wide not-italic">Construtora Embraconi</cite>
+                                <span class="text-gold-400 text-xs" aria-label="5 estrelas">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic text-xs sm:text-sm">"Profissionais de excelência."</p>
+                    </blockquote>
+                    
+                    <blockquote class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://drive.google.com/thumbnail?id=1W83vdnPlsXhUAHFd0fN7FTZ-VHWdX4bb&sz=w80" alt="Construtora Schumacher" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy">
+                            <div>
+                                <cite class="font-bold text-white text-xs sm:text-sm tracking-wide not-italic">Construtora Schumacher</cite>
+                                <span class="text-gold-400 text-xs" aria-label="5 estrelas">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic text-xs sm:text-sm">"Parceiro de muitos anos, alto padrão."</p>
+                    </blockquote>
+                    
+                    <blockquote class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://drive.google.com/thumbnail?id=1drjG3gXnVt4VCjT2xnE3-xKCpT3ev3xU&sz=w80" alt="Bruno Gregorini" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy">
+                            <div>
+                                <cite class="font-bold text-white text-xs sm:text-sm tracking-wide not-italic">Bruno Gregorini</cite>
+                                <span class="text-gold-400 text-xs" aria-label="5 estrelas">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic text-xs sm:text-sm">"Excelente profissional, confiança absoluta!"</p>
+                    </blockquote>
+                    
+                    <blockquote class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://drive.google.com/thumbnail?id=19jVnIATDKcYZ8n0R8kqOW3bHTiwT1SZn&sz=w80" alt="Espaço Level UP" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy">
+                            <div>
+                                <cite class="font-bold text-white text-xs sm:text-sm tracking-wide not-italic">Espaço Level UP</cite>
+                                <span class="text-gold-400 text-xs" aria-label="5 estrelas">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic text-xs sm:text-sm leading-relaxed">"O serviço foi realizado em nosso estúdio com muito profissionalismo. Tiveram todo o cuidado em isolar o piso para evitar qualquer dano. Trabalho rápido e impecável."</p>
+                    </blockquote>
+                </div>
             </div>
-            <div class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition">
-                <div class="flex items-center gap-3 mb-3"><img src="https://drive.google.com/thumbnail?id=1W83vdnPlsXhUAHFd0fN7FTZ-VHWdX4bb&sz=w80" alt="Schumacher" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy"><div><p class="font-bold text-white text-xs sm:text-sm tracking-wide">Construtora Schumacher</p><span class="text-gold-400 text-xs">★★★★★</span></div></div>
-                <p class="text-gray-300 italic text-xs sm:text-sm">"Parceiro de muitos anos, alto padrão."</p>
-            </div>
-            <div class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition">
-                <div class="flex items-center gap-3 mb-3"><img src="https://drive.google.com/thumbnail?id=1drjG3gXnVt4VCjT2xnE3-xKCpT3ev3xU&sz=w80" alt="Bruno" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy"><div><p class="font-bold text-white text-xs sm:text-sm tracking-wide">Bruno Gregorini</p><span class="text-gold-400 text-xs">★★★★★</span></div></div>
-                <p class="text-gray-300 italic text-xs sm:text-sm">"Excelente profissional, confiança absoluta!"</p>
-            </div>
-            <div class="bg-blue-800 p-5 sm:p-6 rounded-xl border border-blue-700 hover:border-gold-400 transition">
-                <div class="flex items-center gap-3 mb-3"><img src="https://drive.google.com/thumbnail?id=19jVnIATDKcYZ8n0R8kqOW3bHTiwT1SZn&sz=w80" alt="Espaço Level UP" class="w-10 h-10 sm:w-12 sm:h-12 avatar-circle border-2 border-gold-400" loading="lazy"><div><p class="font-bold text-white text-xs sm:text-sm tracking-wide">Espaço Level UP</p><span class="text-gold-400 text-xs">★★★★★</span></div></div>
-                <p class="text-gray-300 italic text-xs sm:text-sm leading-relaxed">"O serviço foi realizado em nosso estúdio com alto nível de profissionalismo. A equipe teve todo o cuidado de isolar o piso para evitar qualquer dano, e a instalação foi executada com muita precisão. Além disso, mantiveram o ambiente limpo durante todo o processo. Trabalho impecável e muito bem conduzido."</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA FINAL -->
-    <section id="contato" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-800 text-center">
-        <div class="max-w-2xl mx-auto">
-            <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest blink">Solicite seu orçamento</span>
-            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3 mb-4 tracking-tight">Planejando um serviço elétrico com segurança e qualidade?</h2>
-            <p class="text-gray-300 text-sm sm:text-base mb-6">Fale com a gente e solicite um orçamento sem compromisso.</p>
-            <div class="flex justify-center gap-3 flex-wrap px-2">
-                <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="bg-gold-500 hover:bg-gold-400 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Solicitar Orçamento
-                </a>
-                <a href="tel:+5548999016623" class="border-2 border-white/30 hover:border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Ligar Agora
-                </a>
+        <!-- ==================== CTA FINAL ==================== -->
+        <section id="contato" class="py-12 sm:py-16 px-4 sm:px-6 bg-blue-800 text-center" aria-labelledby="cta-title">
+            <div class="max-w-2xl mx-auto">
+                <span class="text-gold-400 font-semibold text-xs sm:text-sm uppercase tracking-widest blink">Solicite seu orçamento</span>
+                <h2 id="cta-title" class="text-2xl sm:text-3xl font-bold text-white mt-3 mb-4 tracking-tight">Planejando um serviço elétrico com segurança e qualidade?</h2>
+                <p class="text-gray-300 text-sm sm:text-base mb-6">Fale com a gente e solicite um orçamento sem compromisso.</p>
+                
+                <div class="flex justify-center gap-3 flex-wrap px-2">
+                    <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="bg-gold-500 hover:bg-gold-400 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                        Solicitar Orçamento
+                    </a>
+                    <a href="tel:+5548999016623" 
+                       class="border-2 border-white/30 hover:border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center tracking-wide transition-all duration-300 hover:bg-white/10">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Ligar Agora
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-blue-900 py-8 px-4 sm:px-6 text-center border-t border-blue-700">
-        <img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w100" alt="Logo" class="h-12 w-12 sm:h-14 sm:w-14 logo-circle mx-auto mb-3" loading="lazy">
-        <div class="flex justify-center gap-3 sm:gap-4 text-xs mb-3 flex-wrap tracking-widest">
-            <a href="#servicos" class="text-gray-300 hover:text-gold-400">Serviços</a><a href="#galeria" class="text-gray-300 hover:text-gold-400">Galeria</a><a href="#videos" class="text-gray-300 hover:text-gold-400">Vídeos</a><a href="#quemsou" class="text-gray-300 hover:text-gold-400">Quem Sou</a><a href="#depoimentos" class="text-gray-300 hover:text-gold-400">Depoimentos</a>
-        </div>
-        <p class="text-gray-400 text-xs tracking-wide">© 2025 Gondaski Engenharia & Serviços • Criciúma, SC • Todos os direitos reservados.</p>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-blue-900 py-8 px-4 sm:px-6 text-center border-t border-blue-700" role="contentinfo">
+        <img src="https://drive.google.com/thumbnail?id=1bXYod0Ef-wqUSut1bCT2HhHa5QjHnIEc&sz=w100" 
+             alt="Logo Gondaski Engenharia & Serviços" 
+             class="h-12 w-12 sm:h-14 sm:w-14 logo-circle mx-auto mb-3" 
+             width="56" 
+             height="56"
+             loading="lazy">
+        
+        <nav class="flex justify-center gap-3 sm:gap-4 text-xs mb-3 flex-wrap tracking-widest" aria-label="Links do rodapé">
+            <a href="#servicos" class="text-gray-300 hover:text-gold-400 transition-colors">Serviços</a>
+            <a href="#galeria" class="text-gray-300 hover:text-gold-400 transition-colors">Galeria</a>
+            <a href="#videos" class="text-gray-300 hover:text-gold-400 transition-colors">Vídeos</a>
+            <a href="#quemsou" class="text-gray-300 hover:text-gold-400 transition-colors">Quem Sou</a>
+            <a href="#depoimentos" class="text-gray-300 hover:text-gold-400 transition-colors">Depoimentos</a>
+        </nav>
+        
+        <p class="text-gray-400 text-xs tracking-wide">
+            &copy; 2025 Gondaski Engenharia & Serviços &middot; Criciúma, SC &middot; Todos os direitos reservados.
+        </p>
     </footer>
 
-    <!-- WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 bg-green-500 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:scale-110 transition z-50 pulse-whatsapp" aria-label="WhatsApp">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <!-- ==================== WHATSAPP FLUTUANTE ==================== -->
+    <a href="https://wa.me/5548999016623?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 bg-green-500 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50 pulse-whatsapp" 
+       aria-label="Fale conosco pelo WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
     </a>
 
+    <!-- ==================== SCRIPTS ==================== -->
     <script>
-        document.getElementById('menuToggle').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
-        document.querySelectorAll('#mobileMenu a').forEach(link=>{link.addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('hidden'))});
+        /**
+         * Menu Mobile Toggle
+         */
+        function initMobileMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (!menuToggle || !mobileMenu) return;
+            
+            menuToggle.addEventListener('click', function() {
+                const isOpen = mobileMenu.classList.toggle('hidden');
+                menuToggle.setAttribute('aria-expanded', !isOpen);
+                mobileMenu.setAttribute('aria-hidden', isOpen);
+            });
+            
+            document.querySelectorAll('#mobileMenu a[href^="#"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                });
+            });
+        }
+        
+        /**
+         * Handler para clique nos vídeos
+         */
+        function handleVideoClick(thumbElement) {
+            const poster = thumbElement.querySelector('.video-poster');
+            const playBtn = thumbElement.querySelector('.video-play-btn');
+            const iframe = thumbElement.querySelector('iframe');
+            
+            if (poster) poster.style.display = 'none';
+            if (playBtn) playBtn.style.display = 'none';
+            if (iframe) iframe.style.display = 'block';
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileMenu();
+        });
     </script>
+
 </body>
 </html>
